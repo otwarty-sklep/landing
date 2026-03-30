@@ -6,196 +6,270 @@
 <title>Otwarty Sklep — Sprzedawaj przez AI agentów</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    color: #1a1a2e;
-    background: #fafafa;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-  }
-  .container {
-    max-width: 600px;
-    width: 100%;
-    text-align: center;
-  }
-  .badge {
-    display: inline-block;
-    background: #fff3e0;
-    color: #e65100;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 6px 14px;
-    border-radius: 20px;
-    margin-bottom: 24px;
-    letter-spacing: 0.3px;
-  }
-  h1 {
-    font-size: clamp(28px, 5vw, 42px);
-    line-height: 1.2;
-    margin-bottom: 16px;
-    color: #0f0f23;
-  }
-  h1 span { color: #e65100; }
-  .sub {
-    font-size: 18px;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 36px;
-  }
-  .points {
-    text-align: left;
-    margin: 0 auto 36px;
-    max-width: 440px;
-  }
-  .points li {
-    list-style: none;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #333;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-  }
-  .points li:last-child { border: none; }
-  .points .num {
-    font-weight: 700;
-    color: #e65100;
-    font-size: 14px;
-    min-width: 28px;
-  }
-  .form-box {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #000;
     background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 28px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 24px 64px;
+  }
+
+  /* --- top bar --- */
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 72px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #000;
+  }
+  .logo {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .tag {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #888;
+  }
+
+  /* --- headline --- */
+  h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    margin-bottom: 40px;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  /* --- intro --- */
+  .intro {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #444;
+    max-width: 520px;
+    margin-bottom: 64px;
+  }
+
+  /* --- grid --- */
+  .grid {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 0;
+    margin-bottom: 72px;
+    border-top: 1px solid #000;
+  }
+  .grid-num {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+    color: #000;
+  }
+  .grid-text {
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+  }
+
+  /* --- form --- */
+  .form-section {
+    border-top: 1px solid #000;
+    padding-top: 40px;
+    margin-bottom: 72px;
+  }
+  .form-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     margin-bottom: 24px;
   }
-  .form-box p {
-    font-size: 15px;
-    color: #666;
-    margin-bottom: 16px;
+  form {
+    display: flex;
+    gap: 0;
+    max-width: 480px;
   }
-  form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
   input[type="email"] {
     flex: 1;
-    min-width: 220px;
-    padding: 14px 16px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
+    padding: 16px 20px;
+    border: 2px solid #000;
+    border-right: none;
     font-size: 16px;
+    font-family: inherit;
     outline: none;
-    transition: border-color 0.2s;
+    background: #fff;
   }
-  input[type="email"]:focus { border-color: #e65100; }
+  input[type="email"]::placeholder { color: #bbb; }
   button {
-    background: #e65100;
+    background: #000;
     color: #fff;
-    border: none;
-    padding: 14px 28px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
+    border: 2px solid #000;
+    padding: 16px 32px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: inherit;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.15s, color 0.15s;
     white-space: nowrap;
   }
-  button:hover { background: #bf360c; }
-  .trust {
-    font-size: 13px;
+  button:hover {
+    background: #fff;
+    color: #000;
+  }
+  .form-note {
+    font-size: 12px;
     color: #999;
     margin-top: 12px;
   }
+
+  /* --- table --- */
   .compare {
+    margin-bottom: 72px;
+  }
+  .compare-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th {
     text-align: left;
-    margin: 32px auto 0;
-    max-width: 440px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 12px 0;
+    border-bottom: 2px solid #000;
+    color: #000;
+  }
+  td {
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
     font-size: 14px;
     color: #666;
   }
-  .compare table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 12px;
-  }
-  .compare th {
-    text-align: left;
-    font-weight: 600;
-    color: #333;
-    padding: 8px 0;
-    border-bottom: 2px solid #eee;
+  td:first-child {
+    color: #999;
     font-size: 13px;
   }
-  .compare td {
-    padding: 6px 0;
-    border-bottom: 1px solid #f5f5f5;
-    font-size: 13px;
+  .us {
+    color: #000;
+    font-weight: 700;
   }
-  .compare td:first-child { color: #999; }
-  .compare .us { color: #e65100; font-weight: 600; }
-  .stat {
-    margin-top: 32px;
-    padding-top: 24px;
-    border-top: 1px solid #eee;
-    font-size: 14px;
-    color: #888;
-  }
-  .stat strong { color: #333; }
 
-  @media (max-width: 480px) {
+  /* --- stat --- */
+  .stat {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .stat-block .num {
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-block .label {
+    font-size: 12px;
+    color: #888;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 520px) {
+    .page { padding: 48px 20px 48px; }
+    .top { margin-bottom: 48px; }
+    h1 { margin-bottom: 28px; }
+    .intro { margin-bottom: 40px; }
+    .grid { margin-bottom: 48px; }
     form { flex-direction: column; }
-    input[type="email"] { min-width: unset; width: 100%; }
+    input[type="email"] { border-right: 2px solid #000; border-bottom: none; }
     button { width: 100%; }
+    .stat { grid-template-columns: 1fr; }
+    table { font-size: 13px; }
   }
 </style>
 </head>
 <body>
-<div class="container">
+<div class="page">
 
-  <div class="badge">Dla sprzedawców</div>
+  <div class="top">
+    <div class="logo">Otwarty Sklep</div>
+    <div class="tag">Dla sprzedawców</div>
+  </div>
 
-  <h1>Sprzedawaj przez <span>AI agentów</span> bez własnego sklepu</h1>
+  <h1>Sprzedawaj przez<br><em>AI agentów</em></h1>
 
-  <p class="sub">
-    Masz produkty ale nie masz platformy? Daj nam katalog — my wystawimy
-    Twoje produkty w Von Halsky (InPost), ChatGPT i Google AI.
+  <p class="intro">
+    Masz produkty ale nie masz platformy? Daj nam katalog
+    — wystawimy Twoje produkty w Von Halsky, ChatGPT i Google AI.
+    Bez Shopera, bez Base, bez abonamentów.
   </p>
 
-  <ul class="points">
-    <li><span class="num">01</span> Daj nam listę produktów — zdjęcia, ceny, opisy. Resztą zajmiemy się my</li>
-    <li><span class="num">02</span> Twoje produkty trafią do 16 mln klientów InPostu + AI agentów zakupowych</li>
-    <li><span class="num">03</span> Nie potrzebujesz Shopera, Base ani żadnej platformy. Zero abonamentów</li>
-  </ul>
+  <div class="grid">
+    <div class="grid-num">01</div>
+    <div class="grid-text">Daj nam listę produktów — zdjęcia, ceny, opisy. Resztą zajmiemy się my</div>
+    <div class="grid-num">02</div>
+    <div class="grid-text">Twoje produkty trafią do 16 mln klientów InPostu i AI agentów zakupowych</div>
+    <div class="grid-num">03</div>
+    <div class="grid-text">Nie potrzebujesz platformy. Nie płacisz abonamentu. Zero kosztów wejścia</div>
+  </div>
 
-  <div class="form-box">
-    <p>Zostaw email — odezwiemy się z ofertą w 48h</p>
+  <div class="form-section">
+    <div class="form-label">Zostaw email — odezwiemy się w 48h</div>
     <form action="https://formspree.io/f/TWOJ_ID" method="POST">
       <input type="hidden" name="_landing" value="B-marketplace">
       <input type="email" name="email" placeholder="twoj@email.pl" required>
       <button type="submit">Chcę sprzedawać</button>
     </form>
-    <p class="trust">Bez spamu. Odpisujemy osobiście.</p>
+    <div class="form-note">Bez spamu. Odpisujemy osobiście.</div>
   </div>
 
   <div class="compare">
-    Porównaj:
+    <div class="compare-label">Porównanie</div>
     <table>
-      <tr><th></th><th>My</th><th>Shoper</th><th>Base</th></tr>
+      <tr><th></th><th>Otwarty Sklep</th><th>Shoper</th><th>Base</th></tr>
       <tr><td>Koszt wejścia</td><td class="us">0 zł</td><td>od 100 zł/mies.</td><td>od $39/mies.</td></tr>
       <tr><td>Von Halsky</td><td class="us">W pakiecie</td><td>Osobno</td><td>Osobno</td></tr>
-      <tr><td>ChatGPT / Google AI</td><td class="us">W pakiecie</td><td>Nie</td><td>Nie</td></tr>
-      <tr><td>Setup</td><td class="us">24h</td><td>Dni</td><td>Dni</td></tr>
+      <tr><td>ChatGPT + Google AI</td><td class="us">W pakiecie</td><td>Brak</td><td>Brak</td></tr>
+      <tr><td>Czas startu</td><td class="us">24h</td><td>Dni</td><td>Dni</td></tr>
     </table>
   </div>
 
   <div class="stat">
-    <strong>50 mln</strong> zapytań zakupowych dziennie w ChatGPT.
-    <strong>16 mln</strong> klientów InPostu.
-    <br>Twoje produkty mogą tam być jutro.
+    <div class="stat-block">
+      <div class="num">50 mln</div>
+      <div class="label">zapytań zakupowych dziennie w ChatGPT</div>
+    </div>
+    <div class="stat-block">
+      <div class="num">16 mln</div>
+      <div class="label">klientów InPostu w apce</div>
+    </div>
   </div>
 
 </div>
