@@ -6,214 +6,211 @@
 <title>Otwarty Sklep — Twój sklep widoczny dla AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: 'Inter', sans-serif;
-    color: #1a1a1a;
-    background: #fff;
-    font-size: 17px;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: hsl(0 0% 9%);
+    background: hsl(0 0% 100%);
+    font-size: 16px;
     line-height: 1.75;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     font-optical-sizing: auto;
-    font-feature-settings: 'cv01', 'cv02', 'ss01', 'ss03';
-    font-variant-numeric: oldstyle-nums proportional-nums;
+    font-feature-settings: 'cv01', 'cv02', 'ss01';
     hanging-punctuation: first allow-end last;
   }
 
   .page {
-    max-width: 640px;
+    max-width: 620px;
     margin: 0 auto;
-    padding: 96px 32px 80px;
+    padding: 80px 24px 72px;
   }
 
-  /* --- top bar --- */
+  /* --- top --- */
   .top {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 96px;
-    padding-bottom: 20px;
-    border-bottom: 1.5px solid #000;
+    padding-bottom: 16px;
+    border-bottom: 1.5px solid hsl(0 0% 9%);
+    margin-bottom: 80px;
   }
   .logo {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    font-variant-numeric: lining-nums tabular-nums;
   }
   .tag {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #999;
+    color: hsl(0 0% 45%);
   }
 
-  /* --- headline --- */
+  /* --- h1 shadcn-style --- */
   h1 {
-    font-size: clamp(32px, 5.5vw, 52px);
-    font-weight: 300;
-    line-height: 1.15;
+    font-size: clamp(32px, 5.5vw, 48px);
+    font-weight: 800;
+    line-height: 1.1;
     letter-spacing: -0.025em;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
     text-wrap: balance;
-    color: #000;
-    font-variant-numeric: lining-nums;
-  }
-  h1 em {
-    font-style: italic;
-    font-weight: 300;
+    color: hsl(0 0% 4%);
   }
 
-  /* --- intro --- */
-  .intro {
-    font-size: 19px;
-    line-height: 1.8;
-    letter-spacing: -0.005em;
-    word-spacing: 0.02em;
-    color: #555;
-    max-width: 520px;
-    margin-bottom: 80px;
+  /* --- marker --- */
+  mark {
+    background: transparent;
+    color: inherit;
+    background-image: linear-gradient(120deg, hsl(50 100% 80%) 0%, hsl(50 100% 70%) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 40%;
+    background-position: 0 85%;
+    padding: 0 2px;
+  }
+
+  /* --- lead / intro --- */
+  .lead {
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+    color: hsl(0 0% 45%);
+    margin-bottom: 72px;
     text-wrap: pretty;
   }
 
   /* --- grid --- */
   .grid {
     display: grid;
-    grid-template-columns: 40px 1fr;
-    gap: 0;
-    margin-bottom: 88px;
-    border-top: 1.5px solid #000;
+    grid-template-columns: 36px 1fr;
+    margin-bottom: 80px;
+    border-top: 1.5px solid hsl(0 0% 9%);
   }
   .grid-num {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
-    padding: 24px 0;
-    border-bottom: 1px solid #e8e8e8;
-    color: #999;
+    padding: 20px 0;
+    border-bottom: 1px solid hsl(0 0% 90%);
+    color: hsl(0 0% 45%);
     font-variant-numeric: lining-nums tabular-nums;
   }
   .grid-text {
     font-size: 16px;
-    line-height: 1.7;
-    letter-spacing: -0.003em;
-    padding: 24px 0 24px 8px;
-    border-bottom: 1px solid #e8e8e8;
-    color: #333;
+    line-height: 1.75;
+    font-weight: 400;
+    padding: 20px 0 20px 12px;
+    border-bottom: 1px solid hsl(0 0% 90%);
+    color: hsl(0 0% 9%);
     text-wrap: pretty;
   }
 
   /* --- form --- */
   .form-section {
-    border-top: 1.5px solid #000;
-    padding-top: 48px;
-    margin-bottom: 88px;
+    border-top: 1.5px solid hsl(0 0% 9%);
+    padding-top: 40px;
+    margin-bottom: 80px;
   }
   .form-label {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 28px;
-    color: #333;
+    letter-spacing: -0.011em;
+    margin-bottom: 20px;
+    color: hsl(0 0% 9%);
   }
   form {
     display: flex;
     gap: 0;
-    max-width: 480px;
+    max-width: 460px;
   }
   input[type="email"] {
     flex: 1;
-    padding: 18px 20px;
-    border: 1.5px solid #000;
+    padding: 14px 16px;
+    border: 1.5px solid hsl(0 0% 9%);
     border-right: none;
-    font-size: 16px;
+    border-radius: 6px 0 0 6px;
+    font-size: 15px;
     font-family: inherit;
-    letter-spacing: -0.005em;
+    letter-spacing: -0.011em;
     outline: none;
-    background: #fff;
-    color: #1a1a1a;
+    background: hsl(0 0% 100%);
+    color: hsl(0 0% 9%);
+    transition: box-shadow 0.15s;
   }
-  input[type="email"]::placeholder { color: #c0c0c0; }
-  input[type="email"]:focus { background: #fafafa; }
+  input[type="email"]::placeholder { color: hsl(0 0% 64%); }
+  input[type="email"]:focus { box-shadow: 0 0 0 2px hsl(0 0% 80%); }
   button {
-    background: #000;
-    color: #fff;
-    border: 1.5px solid #000;
-    padding: 18px 36px;
-    font-size: 12px;
-    font-weight: 700;
+    background: hsl(0 0% 9%);
+    color: hsl(0 0% 98%);
+    border: 1.5px solid hsl(0 0% 9%);
+    border-radius: 0 6px 6px 0;
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 600;
     font-family: inherit;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    letter-spacing: -0.011em;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
+    transition: opacity 0.15s;
     white-space: nowrap;
   }
-  button:hover {
-    background: #fff;
-    color: #000;
-  }
+  button:hover { opacity: 0.85; }
   .form-note {
-    font-size: 13px;
-    color: #aaa;
-    margin-top: 16px;
+    font-size: 14px;
+    color: hsl(0 0% 45%);
+    margin-top: 12px;
   }
 
   /* --- channels --- */
   .channels {
     display: flex;
-    gap: 36px;
+    gap: 32px;
     flex-wrap: wrap;
-    margin-bottom: 88px;
+    margin-bottom: 80px;
   }
   .channel {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #ccc;
+    color: hsl(0 0% 78%);
   }
 
   /* --- stat --- */
   .stat {
-    border-top: 1px solid #e8e8e8;
-    padding-top: 32px;
+    border-top: 1px solid hsl(0 0% 90%);
+    padding-top: 28px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: 28px;
   }
-  .stat-block .num {
-    font-size: 40px;
-    font-weight: 300;
-    letter-spacing: -0.03em;
+  .stat-num {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
     line-height: 1;
-    margin-bottom: 8px;
-    color: #000;
+    margin-bottom: 6px;
+    color: hsl(0 0% 4%);
     font-variant-numeric: lining-nums tabular-nums;
   }
-  .stat-block .label {
-    font-size: 13px;
-    color: #999;
-    letter-spacing: 0.01em;
+  .stat-label {
+    font-size: 14px;
+    color: hsl(0 0% 45%);
     line-height: 1.5;
   }
 
   @media (max-width: 520px) {
-    .page { padding: 56px 24px 56px; }
-    .top { margin-bottom: 64px; }
-    h1 { margin-bottom: 32px; }
-    .intro { font-size: 17px; margin-bottom: 56px; }
-    .grid { margin-bottom: 56px; }
+    .page { padding: 48px 20px 48px; }
+    .top { margin-bottom: 56px; }
+    h1 { margin-bottom: 24px; }
+    .lead { font-size: 18px; margin-bottom: 48px; }
+    .grid { margin-bottom: 48px; }
     form { flex-direction: column; }
-    input[type="email"] { border-right: 1.5px solid #000; border-bottom: none; }
-    button { width: 100%; }
+    input[type="email"] { border-right: 1.5px solid hsl(0 0% 9%); border-bottom: none; border-radius: 6px 6px 0 0; }
+    button { border-radius: 0 0 6px 6px; width: 100%; }
     .stat { grid-template-columns: 1fr; }
   }
 </style>
@@ -226,21 +223,21 @@
     <div class="tag">Early Access</div>
   </div>
 
-  <h1>Twój sklep jest<br><em>niewidoczny</em> dla AI</h1>
+  <h1>Twój sklep jest <mark>niewidoczny</mark> dla AI</h1>
 
-  <p class="intro">
+  <p class="lead">
     ChatGPT, Google AI i Von Halsky obsługują miliony zapytań zakupowych dziennie.
     Twoje produkty tam nie istnieją. Podłączamy Twój sklep do AI agentów
-    — bez zmiany czegokolwiek.
+    — <mark>bez zmiany czegokolwiek</mark>.
   </p>
 
   <div class="grid">
     <div class="grid-num">01</div>
-    <div class="grid-text">Mirror Twojego sklepu w formacie zrozumiałym dla AI agentów. Bez migracji, bez pluginów</div>
+    <div class="grid-text">Mirror Twojego sklepu w formacie zrozumiałym dla AI agentów. <mark>Bez migracji</mark>, bez pluginów</div>
     <div class="grid-num">02</div>
-    <div class="grid-text">Produkty widoczne w ChatGPT Shopping, Google AI Mode i Von Halsky — 16 mln klientów InPostu</div>
+    <div class="grid-text">Produkty widoczne w ChatGPT Shopping, Google AI Mode i <mark>Von Halsky — 16 mln klientów</mark> InPostu</div>
     <div class="grid-num">03</div>
-    <div class="grid-text">Setup w 24 godziny. Od 29 zł miesięcznie. Rezygnujesz kiedy chcesz</div>
+    <div class="grid-text">Setup w 24 godziny. <mark>Od 29 zł miesięcznie</mark>. Rezygnujesz kiedy chcesz</div>
   </div>
 
   <div class="form-section">
@@ -248,7 +245,7 @@
     <form action="https://formspree.io/f/TWOJ_ID" method="POST">
       <input type="hidden" name="_landing" value="A-mirror">
       <input type="email" name="email" placeholder="twoj@email.pl" required>
-      <button type="submit">Early access</button>
+      <button type="submit">Chcę early access</button>
     </form>
     <div class="form-note">Bez spamu. Odpisujemy osobiście.</div>
   </div>
@@ -261,13 +258,13 @@
   </div>
 
   <div class="stat">
-    <div class="stat-block">
-      <div class="num">25 000</div>
-      <div class="label">polskich sklepów przeskanowanych</div>
+    <div>
+      <div class="stat-num">25 000</div>
+      <div class="stat-label">polskich sklepów przeskanowanych</div>
     </div>
-    <div class="stat-block">
-      <div class="num">95%</div>
-      <div class="label">niewidocznych dla AI agentów</div>
+    <div>
+      <div class="stat-num">95%</div>
+      <div class="stat-label">niewidocznych dla AI agentów</div>
     </div>
   </div>
 
