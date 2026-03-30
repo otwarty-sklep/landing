@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Otwarty Sklep</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    padding: 24px;
+  }
+  .c { max-width: 480px; text-align: center; }
+  h1 { font-size: 28px; margin-bottom: 12px; color: #0f0f23; }
+  p { color: #666; margin-bottom: 32px; font-size: 16px; }
+  .links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  a {
+    display: block;
+    padding: 16px 32px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: transform 0.15s;
+  }
+  a:hover { transform: translateY(-2px); }
+  .a { background: #1565c0; color: #fff; }
+  .b { background: #e65100; color: #fff; }
+</style>
+</head>
+<body>
+<div class="c">
+  <h1>Otwarty Sklep</h1>
+  <p>Dwie wersje landing page — A/B test</p>
+  <div class="links">
+    <a href="/landing/a/" class="a">A: Mam sklep</a>
+    <a href="/landing/b/" class="b">B: Chcę sprzedawać</a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Otwarty Sklep — Twój sklep widoczny dla AI</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #1a1a2e;
+    background: #fafafa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+  }
+  .badge {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    letter-spacing: 0.3px;
+  }
+  h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: #0f0f23;
+  }
+  h1 span { color: #1565c0; }
+  .sub {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 36px;
+  }
+  .points {
+    text-align: left;
+    margin: 0 auto 36px;
+    max-width: 440px;
+  }
+  .points li {
+    list-style: none;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .points li:last-child { border: none; }
+  .points .num {
+    font-weight: 700;
+    color: #1565c0;
+    font-size: 14px;
+    min-width: 28px;
+  }
+  .form-box {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+  .form-box p {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 16px;
+  }
+  form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  input[type="email"] {
+    flex: 1;
+    min-width: 220px;
+    padding: 14px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  input[type="email"]:focus { border-color: #1565c0; }
+  button {
+    background: #1565c0;
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  button:hover { background: #0d47a1; }
+  .trust {
+    font-size: 13px;
+    color: #999;
+    margin-top: 12px;
+  }
+  .logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .logos span {
+    font-size: 13px;
+    color: #aaa;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .stat {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    color: #888;
+  }
+  .stat strong { color: #333; }
+
+  @media (max-width: 480px) {
+    form { flex-direction: column; }
+    input[type="email"] { min-width: unset; width: 100%; }
+    button { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="badge">Early access</div>
+
+  <h1>Twój sklep jest <span>niewidoczny</span> dla AI</h1>
+
+  <p class="sub">
+    ChatGPT, Google AI i Von Halsky obsługują miliony zapytań zakupowych dziennie.
+    Twoje produkty tam nie istnieją. My to zmieniamy.
+  </p>
+
+  <ul class="points">
+    <li><span class="num">01</span> Podłączamy Twój sklep do AI agentów zakupowych — bez zmiany czegokolwiek</li>
+    <li><span class="num">02</span> Twoje produkty widoczne w ChatGPT, Google AI Mode i Von Halsky (16 mln klientów InPostu)</li>
+    <li><span class="num">03</span> Setup w 24h. Od 29 zł/mies. Bez migracji, bez ryzyka</li>
+  </ul>
+
+  <div class="form-box">
+    <p>Zostaw email — odezwiemy się z dostępem w 48h</p>
+    <form action="https://formspree.io/f/TWOJ_ID" method="POST">
+      <input type="hidden" name="_landing" value="A-mirror">
+      <input type="email" name="email" placeholder="twoj@email.pl" required>
+      <button type="submit">Chcę early access</button>
+    </form>
+    <p class="trust">Bez spamu. Odpisujemy osobiście.</p>
+  </div>
+
+  <div class="logos">
+    <span>UCP</span>
+    <span>Google AI</span>
+    <span>ChatGPT</span>
+    <span>Von Halsky</span>
+  </div>
+
+  <div class="stat">
+    Przeskanowaliśmy <strong>25 000 polskich sklepów</strong> — 95% jest niewidocznych dla AI agentów.
+    <br>Sprawdź czy Twój też.
+  </div>
+
+</div>
+</body>
+</html>
